@@ -1,0 +1,276 @@
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+  background-color: black;
+  scroll-behavior: smooth;
+}
+
+.month {
+  padding: 70px 25px;
+  width: 100%;
+  background: #1abc9c;
+  text-align: center;
+}
+
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month ul li {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.month .prev {
+  float: left;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+.month .next {
+  float: right;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+.weekdays {
+  margin: 0;
+  padding: 10px 0;
+  background-color: #ddd;
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 13.6%;
+  color: #666;
+  text-align: center;
+}
+
+.days {
+  padding: 10px 0;
+  background: #eee;
+  margin: 0;
+}
+
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 13.6%;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 12px;
+  color: #777;
+}
+
+.days li .active {
+  padding: 5px;
+  background: #1abc9c;
+  color: white !important
+}
+
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+
+  .weekdays li,
+  .days li {
+    width: 13.1%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+
+  .weekdays li,
+  .days li {
+    width: 12.5%;
+  }
+
+  .days li .active {
+    padding: 2px;
+  }
+}
+
+@media screen and (max-width: 290px) {
+
+  .weekdays li,
+  .days li {
+    width: 12.2%;
+  }
+}
+
+.img {
+  margin-left: 40%;
+  margin-top: 20px;
+}
+.christmas-Box{
+  position: relative;
+  width: 380px;
+  height: 420px;
+  background: #ff004f;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: 'Popins' , sans-serif;
+}
+.christmas-Box::before{
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  z-index: 1;
+  transform-origin: bottom right;
+  background: linear-gradient(0deg,transparent,transparent,#fff,#fff,#fff);
+  animation: animate 6s linear infinite;
+}
+.christmas-Box::after{
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  z-index: 1;
+  transform-origin: bottom right;
+  background: linear-gradient(0deg,transparent,transparent,#0cf,#0cf,#0cf);
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+}
+.borderLine{
+  position: absolute;
+  inset: 0;
+  left: 0;
+}
+.borderLine::before{
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  z-index: 1;
+  transform-origin: bottom right;
+  background: linear-gradient(0deg,transparent,transparent,rgb(4, 100, 124),rgb(4, 100, 124),rgb(4, 100, 124));
+  animation: animate 6s linear infinite;
+  animation-delay: -1.4s;
+}
+.borderLine::after{
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  z-index: 1;
+  transform-origin: bottom right;
+  background: linear-gradient(0deg,transparent,transparent,#0c2,#0c2,#0c2);
+  animation: animate 6s linear infinite;
+  animation-delay: -4.5s;
+}
+@keyframes animate{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+.christmas-Box form{
+  z-index: 2;
+  position: absolute;
+  inset: 4px;
+  background: green;
+  border-radius: 8px;
+  padding: 50px 40px;
+}
+.christmas-Box form h2{
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+.christmas-Box form .box{
+  position: relative;
+  width: 300px;
+  margin-top: 35px;
+}
+.christmas-Box form .box input{
+  padding: 20px 10px 10px;
+  width: 100%;
+  z-index: 10;
+  position: relative;
+  transition: .5s;
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  font-size: 1.2em;
+}
+.christmas-Box form .box span{
+  position: absolute;
+  left: 0;
+  padding: 20px 0px 10px;
+  pointer-events: none;
+}
+.christmas-Box form .box input:valid ~ span,
+.christmas-Box form .box input:focus ~ span{
+  color: #fff;
+  transform: translateY(-34px);
+  font-size: 0.75em;
+  transition: .5s;
+}
+.christmas-Box form .box i{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: #fff;
+  border-radius: 4px;
+}
+.christmas-Box form .box input:valid ~ i,
+.christmas-Box form .box input:focus ~ i{
+  height: 44px;
+  transition: .5s;
+}
+.links{
+  display: flex;
+  justify-content: space-between;
+}
+.links  a{
+  color: #8f8f8f;
+  font-size: 0.75em;
+  text-decoration: none;
+  margin-top: 10px;
+}
+.links  a:hover,
+.links a:nth-child(2){
+  color: lawngreen;
+}
+.christmas-Box form input[type="submit"]{
+  margin-top: 20px;
+  border-radius: 4px;
+  padding: 9px 25px;
+  width: 100px;
+  background: lawngreen;
+  font-size: 1.1em;
+  border: none;
+}
+.christmas-Box form input[type="submit"]:active{
+  opacity: 0.8;
+}
+.aBox{
+  margin-left: 10px;
+  font-size: 12px;
+  text-decoration: none;
+  color: coral;
+}
